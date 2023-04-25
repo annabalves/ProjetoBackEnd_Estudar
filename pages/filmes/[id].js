@@ -1,5 +1,6 @@
 import Pagina from '@/components/Pagina'
 import apiFilmes from '@/services/apiFilmes'
+import Link from 'next/link'
 import React from 'react'
 import { Card, Col, Container, Row } from 'react-bootstrap'
 
@@ -29,7 +30,7 @@ function Detalhes({ filme, filme2 }) {
       <h2>Atores</h2>
       <Row md={6}>
         {filme2.map(item => (
-          <img className='m-1' src={'https://image.tmdb.org/t/p/w500/' + item.profile_path} />
+          <Link href={'/atores/' + item.id}> <img className='container m-1' src={'https://image.tmdb.org/t/p/w500/' + item.profile_path} /> </Link>
         ))}
       </Row>
 
