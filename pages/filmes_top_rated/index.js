@@ -7,7 +7,7 @@ import { Button, Card, Col, Row } from 'react-bootstrap'
 const index = ({ filmes }) => {
 
     return (
-        <Pagina titulo="Filmes Populares">
+        <Pagina titulo="Filmes mais avaliados">
 
             <Row md={4}>
                 {filmes.map(item => (
@@ -31,7 +31,7 @@ const index = ({ filmes }) => {
 
 export async function getServerSideProps(context) {
 
-    const resultado = await apiFilmes.get('/movie/popular?language=pt-BR')
+    const resultado = await apiFilmes.get('/movie/top_rated?language=pt-BR')
     const filmes = resultado.data.results
 
     return {
